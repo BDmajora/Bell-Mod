@@ -13,47 +13,6 @@ import net.minecraft.entity.Entity;
 public class BellModel extends ModelBase
 {
 //fields
- ModelRenderer Wood;
- ModelRenderer Shaft;
- ModelRenderer Top1;
- ModelRenderer Top2;
- ModelRenderer Front1A;
- ModelRenderer Front1B;
- ModelRenderer Front1C;
- ModelRenderer Front1D;
- ModelRenderer Front2A;
- ModelRenderer Front2B;
- ModelRenderer Front2C;
- ModelRenderer Front2D;
- ModelRenderer Front3A;
- ModelRenderer Front3B;
- ModelRenderer Front3C;
- ModelRenderer Front3D;
- ModelRenderer Clapper;
- ModelRenderer Crook1A;
- ModelRenderer Crook1B;
- ModelRenderer Crook1C;
- ModelRenderer Crook1D;
- ModelRenderer Crook2A;
- ModelRenderer Crook2B;
- ModelRenderer Crook2C;
- ModelRenderer Crook2D;
- ModelRenderer Crook3A;
- ModelRenderer Crook3B;
- ModelRenderer Crook3C;
- ModelRenderer Crook3D;
- ModelRenderer Bar1A;
- ModelRenderer Bar1B;
- ModelRenderer Bar1C;
- ModelRenderer Bar1D;
- ModelRenderer Bar2A;
- ModelRenderer Bar2B;
- ModelRenderer Bar2C;
- ModelRenderer Bar2D;
- ModelRenderer Bar3A;
- ModelRenderer Bar3B;
- ModelRenderer Bar3C;
- ModelRenderer Bar3D;
  ModelRenderer bell;
  ModelRenderer fixture;
 
@@ -65,13 +24,13 @@ public class BellModel extends ModelBase
 
         bell = new ModelRenderer(this, 0, 0);
         bell.addBox(-3.0f, -6.0f, -3.0f, 6, 7, 6);
-        bell.setRotationPoint(8.0f, 12.0f, 8.0f);
+        bell.setRotationPoint(0.0f, 12.0f - 4f, 0.0f);
         bell.setTextureSize(32, 32);
         bell.mirror = true;
 
         fixture = new ModelRenderer(this, 0, 13);
         fixture.addBox(4.0f, 4.0f, 4.0f, 8, 2, 8);
-        fixture.setRotationPoint(-8.0f, -12.0f, -8.0f);
+        fixture.setRotationPoint(-8.0f, -12.0f + 16f, -8.0f);
         fixture.setTextureSize(32, 32);
         fixture.mirror = true;
     }
@@ -82,9 +41,6 @@ public class BellModel extends ModelBase
     {
         super.render(entity, f, f1, f2, f3, f4, f5);
         setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-        // ... rest of your ModelRenderer variables here ...
-        Bar3C.render(f5);
-        Bar3D.render(f5);
 
         // Render the bell
         bell.rotateAngleX = f; // replace 'f' with the desired rotateAngleX for the bell
