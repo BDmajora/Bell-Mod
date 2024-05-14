@@ -102,13 +102,13 @@ public class BlockBell extends BlockContainer
 				flag = true;
 			}
 
-//			if (flag)
-//			{
-//				if (!world.isRemote)
-//				{
-//					world.playSoundEffect((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F);
-//				}
-//			}
+			if (flag)
+			{
+				if (!world.isRemote)
+				{
+					world.playSoundEffect((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F);
+				}
+			}
 			else
 			{
 				boolean isPowered = world.isBlockIndirectlyGettingPowered(x, y, z) || world.isBlockIndirectlyGettingPowered(x, y, z);
