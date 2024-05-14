@@ -77,19 +77,65 @@ public class BlockBell extends BlockContainer
 	
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int id1, float id2, float id3, float id4)
 	{
+
 		world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F, false);
 		return true;
+
+
 	}
 
-	@Override
 	public void onNeighborBlockChange(World world, int x, int y, int z, Block block)
 	{
-		boolean isPowered = world.isBlockIndirectlyGettingPowered(x, y, z);
+		int metadata = world.getBlockMetadata(x, y, z);
 
-		if (isPowered)
+		if ((metadata & 8) == 0)
 		{
-			world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F, false);
+			boolean flag = false;
+
+			if (world.getBlock(x, y + 1, z) != this)
+			{
+				flag = true;
+			}
+
+			if (!World.doesBlockHaveSolidTopSurface(world, x, y, z))
+			{
+				flag = true;
+			}
+
+//			if (flag)
+//			{
+//				if (!world.isRemote)
+//				{
+//					world.playSoundEffect((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F);
+//				}
+//			}
+			else
+			{
+				boolean isPowered = world.isBlockIndirectlyGettingPowered(x, y, z) || world.isBlockIndirectlyGettingPowered(x, y, z);
+
+				if ((isPowered || block.canProvidePower()) && block != this)
+				{
+					world.playSoundEffect((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F);
+
+				}
+			}
+		}
+		else
+		{
+			if (world.getBlock(x, y , z) != this)
+			{
+				world.setBlockToAir(x, y, z);
+			}
+
+			if (block != this)
+			{
+				this.onNeighborBlockChange(world, x , y , z  , block);
+			}
 		}
 	}
+
+
+
+
 
 }
