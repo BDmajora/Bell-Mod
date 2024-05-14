@@ -2,6 +2,7 @@ package dabells.blocks;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -80,10 +81,15 @@ public class BlockBell extends BlockContainer
 		return true;
 	}
 
-	public boolean onBlockEventReceived(World world, int x, int y, int z, EntityPlayer player, int id1, float id2, float id3, float id4)
+	@Override
+	public void onNeighborBlockChange(World world, int x, int y, int z, Block block)
 	{
-		world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F, false);
-		return true;
+		boolean isPowered = world.isBlockIndirectlyGettingPowered(x, y, z);
+
+		if (isPowered)
+		{
+			world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F, false);
+		}
 	}
 
 }
