@@ -1,4 +1,4 @@
-package com.Dabells.dabells.blocks;
+package dabells.blocks;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
@@ -8,8 +8,8 @@ import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import com.Dabells.dabells.CommonProxy;
-import com.Dabells.dabells.Infofile;
+import dabells.CommonProxy;
+import dabells.Infofile;
 
 @SideOnly(Side.CLIENT)
 public class RenderBell extends TileEntitySpecialRenderer

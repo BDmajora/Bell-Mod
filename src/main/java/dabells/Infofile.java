@@ -1,4 +1,4 @@
-package com.Dabells.dabells;
+package dabells;
 
 
 public class Infofile

@@ -1,4 +1,4 @@
-package com.Dabells.dabells;
+package dabells;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

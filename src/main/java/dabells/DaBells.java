@@ -1,6 +1,7 @@
-package com.Dabells.dabells;
+package dabells;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -15,7 +16,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import com.Dabells.dabells.blocks.BlockBell;
+import dabells.blocks.BlockBell;
 import dabells.tileentities.TEBellDiamond;
 import dabells.tileentities.TEBellEmerald;
 import dabells.tileentities.TEBellEnder;
@@ -61,19 +62,10 @@ import dabells.tileentities.TEPBellSilver;
 
 public class DaBells
 {
-	public static CreativeTabs DaBellsTab = new CreativeTabs("DaBells")
-	{
-		public Item getTabIconItem()
-		{
-			return null;
-		}
-	};
 		
 //Blocks
 	//Tier 0 (Decorative) Bell Blocks
 		public static final Block BellSilver = new BlockBell("BellSilver");
-
-
 
 	@Instance(Infofile.NAME)
 	public static DaBells instance;
@@ -105,54 +97,25 @@ public class DaBells
 //Tier 0 Bell Blocks
      	GameRegistry.registerBlock(BellSilver, "BellSilver");
 
+//TileEntities
       	if (CommonProxy.resolution == 0) 
       	{
      	GameRegistry.registerTileEntity(TEBellSilver.class, "TEBellSilver");
-      	GameRegistry.registerTileEntity(TEBellQuartz.class, "TEBellQuartz");
-      	GameRegistry.registerTileEntity(TEBellRedStone.class, "TEBellRedStone");
-      	GameRegistry.registerTileEntity(TEBellLazurite.class, "TEBellLazurite");
-      	GameRegistry.registerTileEntity(TEBellGold.class, "TEBellGold");
-      	GameRegistry.registerTileEntity(TEBellDiamond.class, "TEBellDiamond");
-      	GameRegistry.registerTileEntity(TEBellEnder.class, "TEBellEnder");
-      	GameRegistry.registerTileEntity(TEBellEmerald.class, "TEBellEmerald");
-     	GameRegistry.registerTileEntity(TEHBellSilver.class, "TEHBellSilver");
-      	GameRegistry.registerTileEntity(TEHBellQuartz.class, "TEHBellQuartz");
-      	GameRegistry.registerTileEntity(TEHBellRedStone.class, "TEHBellRedStone");
-      	GameRegistry.registerTileEntity(TEHBellLazurite.class, "TEHBellLazurite");
-      	GameRegistry.registerTileEntity(TEHBellGold.class, "TEHBellGold");
-      	GameRegistry.registerTileEntity(TEHBellDiamond.class, "TEHBellDiamond");
-      	GameRegistry.registerTileEntity(TEHBellEnder.class, "TEHBellEnder");
-      	GameRegistry.registerTileEntity(TEHBellEmerald.class, "TEHBellEmerald");
-     	GameRegistry.registerTileEntity(TEPBellSilver.class, "TEPBellSilver");
-      	GameRegistry.registerTileEntity(TEPBellQuartz.class, "TEPBellQuartz");
-      	GameRegistry.registerTileEntity(TEPBellRedStone.class, "TEPBellRedStone");
-      	GameRegistry.registerTileEntity(TEPBellLazurite.class, "TEPBellLazurite");
-      	GameRegistry.registerTileEntity(TEPBellGold.class, "TEPBellGold");
-      	GameRegistry.registerTileEntity(TEPBellDiamond.class, "TEPBellDiamond");
-      	GameRegistry.registerTileEntity(TEPBellEnder.class, "TEPBellEnder");
-      	GameRegistry.registerTileEntity(TEPBellEmerald.class, "TEPBellEmerald");
-      	GameRegistry.registerTileEntity(TEMBellSilver.class, "TEMBellSilver");
-      	GameRegistry.registerTileEntity(TEMBellQuartz.class, "TEMBellQuartz");
-      	GameRegistry.registerTileEntity(TEMBellRedStone.class, "TEMBellRedStone");
-      	GameRegistry.registerTileEntity(TEMBellLazurite.class, "TEMBellLazurite");
-      	GameRegistry.registerTileEntity(TEMBellGold.class, "TEMBellGold");
-      	GameRegistry.registerTileEntity(TEMBellDiamond.class, "TEMBellDiamond");
-      	GameRegistry.registerTileEntity(TEMBellEnder.class, "TEMBellEnder");
-      	GameRegistry.registerTileEntity(TEMBellEmerald.class, "TEMBellEmerald");
-      	GameRegistry.registerTileEntity(TEBellNetherStar0.class, "TEBellNetherStar0");
-      	GameRegistry.registerTileEntity(TEBellNetherStar1.class, "TEBellNetherStar1");
-      	GameRegistry.registerTileEntity(TEBellNetherStar2.class, "TEBellNetherStar2");
-      	GameRegistry.registerTileEntity(TEBellNetherStar3.class, "TEBellNetherStar3");
-      	GameRegistry.registerTileEntity(TEBellNetherStar4.class, "TEBellNetherStar4");
-      	GameRegistry.registerTileEntity(TEBellNetherStar5.class, "TEBellNetherStar5");
-      	GameRegistry.registerTileEntity(TEBellNetherStar6.class, "TEBellNetherStar6");
-      	GameRegistry.registerTileEntity(TEBellNetherStar7.class, "TEBellNetherStar7");
       	}
 //Blocks
+
+//OreDictionary
+
+//Bell Recipes
+	//Blocks
+      	//ItemStacks
 
      //Tier 0 (Decorative) Bell Blocks
      	GameRegistry.addRecipe(new ItemStack(BellSilver, 1), new Object[]
 				{"TYT", "YXY", "YYY", 'T', Items.stick, 'Y', Items.iron_ingot, 'X', Items.string});
+
+
+	//Item
 
 //Smelting (only for Tier 0 Bells)		
 		//ItemStacks for Bell Breakdown		

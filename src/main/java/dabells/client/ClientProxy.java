@@ -1,9 +1,9 @@
-package com.Dabells.dabells.client;
+package dabells.client;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import cpw.mods.fml.client.registry.ClientRegistry;
-import com.Dabells.dabells.CommonProxy;
-import com.Dabells.dabells.blocks.RenderBell;
+import dabells.CommonProxy;
+import dabells.blocks.RenderBell;
 import dabells.tileentities.TEBellDiamond;
 import dabells.tileentities.TEBellEmerald;
 import dabells.tileentities.TEBellEnder;
