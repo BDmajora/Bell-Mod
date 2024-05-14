@@ -46,10 +46,10 @@ public class RenderBell extends TileEntitySpecialRenderer
 			else meta = "Silver";
 			
 			String nameNS = "BellNetherStar";
-			texture = new ResourceLocation(Infofile.NAME + ":" + "textures/tileentities/" + CommonProxy.resolution + "/" + nameNS + meta + ".png");
+			texture = new ResourceLocation("DaBells:textures/entity/bell/bell_body.png");
 		}
 		else
-			texture = new ResourceLocation(Infofile.NAME + ":" + "textures/tileentities/" + CommonProxy.resolution + "/" + name + ".png");
+			texture = new ResourceLocation("DaBells:textures/entity/bell/bell_body.png");
 		
 	}
 	

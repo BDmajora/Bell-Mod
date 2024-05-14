@@ -13,15 +13,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import dabells.CommonProxy;
-import dabells.DaBells;
 import dabells.Infofile;
-import dabells.tileentities.TEBellDiamond;
-import dabells.tileentities.TEBellEmerald;
-import dabells.tileentities.TEBellEnder;
-import dabells.tileentities.TEBellGold;
-import dabells.tileentities.TEBellLazurite;
-import dabells.tileentities.TEBellQuartz;
-import dabells.tileentities.TEBellRedStone;
 import dabells.tileentities.TEBellSilver;
 
 public class BlockBell extends BlockContainer
@@ -66,13 +58,6 @@ public class BlockBell extends BlockContainer
 			TileEntity tileentity = null;
 		
 			if (name == "BellSilver") tileentity = new TEBellSilver();
-			else if (name == "BellQuartz") tileentity = new TEBellQuartz();
-			else if (name == "BellRedStone") tileentity = new TEBellRedStone();
-			else if (name == "BellLazurite") tileentity = new TEBellLazurite();
-			else if (name == "BellGold") tileentity = new TEBellGold();
-			else if (name == "BellDiamond") tileentity = new TEBellDiamond();
-			else if (name == "BellEnder") tileentity = new TEBellEnder();
-			else if (name == "BellEmerald") tileentity = new TEBellEmerald();
 		
 			return tileentity;
 		}
@@ -89,13 +74,13 @@ public class BlockBell extends BlockContainer
 	public void registerBlockIcons(IIconRegister icon)
 	{this.blockIcon = icon.registerIcon(Infofile.NAME + ":" + CommonProxy.resolution + "/" + name);}
 	
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int id1, float id2, float id3, float id4) 
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int id1, float id2, float id3, float id4)
 	{
 		world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F, false);
 		return true;
 	}
 
-	public boolean onRedStoneSignal(World world, int x, int y, int z, EntityPlayer player, int id1, float id2, float id3, float id4)
+	public boolean onBlockEventReceived(World world, int x, int y, int z, EntityPlayer player, int id1, float id2, float id3, float id4)
 	{
 		world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F, false);
 		return true;
