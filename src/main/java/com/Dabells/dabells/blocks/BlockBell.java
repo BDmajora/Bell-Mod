@@ -92,7 +92,13 @@ public class BlockBell extends BlockContainer
 	
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int id1, float id2, float id3, float id4) 
 	{
-		world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 2.0F, false);
+		world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F, false);
+		return true;
+	}
+
+	public boolean onRedStoneSignal(World world, int x, int y, int z, EntityPlayer player, int id1, float id2, float id3, float id4)
+	{
+		world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F, false);
 		return true;
 	}
 
