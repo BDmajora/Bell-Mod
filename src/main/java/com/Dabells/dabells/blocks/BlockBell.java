@@ -1,7 +1,10 @@
-package dabells.blocks;
+package com.Dabells.dabells.blocks;
 
 import java.util.Random;
 
+import com.Dabells.dabells.CommonProxy;
+import com.Dabells.dabells.Infofile;
+import com.Dabells.dabells.DaBells;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -12,9 +15,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import dabells.CommonProxy;
-import dabells.DaBells;
-import dabells.Infofile;
 import dabells.tileentities.TEBellDiamond;
 import dabells.tileentities.TEBellEmerald;
 import dabells.tileentities.TEBellEnder;
@@ -91,12 +91,6 @@ public class BlockBell extends BlockContainer
 	{this.blockIcon = icon.registerIcon(Infofile.NAME + ":" + CommonProxy.resolution + "/" + name);}
 	
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int id1, float id2, float id3, float id4) 
-	{
-		world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F, false);
-		return true;
-	}
-
-	public boolean onRedStoneSignal(World world, int x, int y, int z, EntityPlayer player, int id1, float id2, float id3, float id4)
 	{
 		world.playSound((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F, false);
 		return true;

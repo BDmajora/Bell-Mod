@@ -1,4 +1,4 @@
-package dabells;
+package com.Dabells.dabells;
 
 import net.minecraft.potion.Potion;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
