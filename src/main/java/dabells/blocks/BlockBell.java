@@ -116,7 +116,7 @@ public class BlockBell extends BlockContainer
 				if ((isPowered || block.canProvidePower()) && block != this)
 				{
 					world.playSoundEffect((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, Infofile.NAME + ":bellsmack", 1.0F, 1.0F);
-
+					world.notifyBlocksOfNeighborChange(x, y, z, this); // Notify neighbors of redstone state change
 				}
 			}
 		}
@@ -133,6 +133,7 @@ public class BlockBell extends BlockContainer
 			}
 		}
 	}
+
 
 
 
